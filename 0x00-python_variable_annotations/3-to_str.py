@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
 """
-    Variable annotations: task 3
+    Variable annotations: task2
 """
 
+import math
 
-def to_str(n: float) -> str:
+
+def floor(n: float) -> int:
     """
-        A type-annotated function to
-        return string representation
-        of a floating point number
+        A type-annotated function computing
+        the floor a floating point number
     """
-    return str(n)
+    return math.floor(n)
