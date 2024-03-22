@@ -4,7 +4,7 @@
 
 
 import asyncio
-from typing import generator
+from typing import Generator
 import random
 
 
