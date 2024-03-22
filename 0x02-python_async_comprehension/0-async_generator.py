@@ -4,14 +4,14 @@
 
 
 import asyncio
-from random import uniform
+from typing import generator
+import random
 
 
-async def wait_random(max_delay: int = 10) -> float:
+async def async_generator() -> Generator[float, None, None]:
     """
-    A caroutine that waits for a random delay
-    and returns the delay time in seconds
+    A coroutine that generates a sequence of 10 numbers
     """
-    delay = uniform(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+    for i in range(10):
+        await asyncio.sleep(1)
+        yield random.random() * 10
