@@ -3,17 +3,12 @@
 """ Task 1 Module """
 
 from typing import List
-import asyncio
-wait_random = __import__('0-basic_async_syntax').wait_random
+from importlib import import_module as using
+async_generator = using('0-async_generator').async_generator
 
 
-async def wait_n(n: int, max_delay: int) -> List[float]:
+async def async_comprehension() -> List[float]:
     """
-        Executes a coroutine that waits for random delays
-        and returns a list of the waited times in
-        ascending order
+        Creates 10 number list from a 10 number generator
     """
-    delays = []
-    for i in range(n):
-        delays.append(await wait_random(max_delay))
-    return sorted(delays)
+    return [num async for num in async_generator()]
